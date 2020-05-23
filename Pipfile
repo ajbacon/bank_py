@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 
 [scripts]
-main = "python ./lib/main.py"
+main = "python ./lib/something.py"
 test = "python -m unittest"
 
 [requires]
