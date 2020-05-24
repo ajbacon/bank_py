@@ -1,4 +1,4 @@
-class Transaction():
+class Transaction(object):
     def __init__(self, amount, category, old_balance):
         self._amount = amount
         self._category = category
