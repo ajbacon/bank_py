@@ -7,7 +7,6 @@ from lib.transaction import Transaction
 
 
 class TestTransaction(unittest.TestCase):
-
     def setUp(self):
         self.credit = Transaction(1000, 'CREDIT', 500)
         self.debit = Transaction(500, 'DEBIT', 1000)
@@ -26,6 +25,10 @@ class TestTransaction(unittest.TestCase):
     def test_update_balance_credit(self):
         """it should update and store the new balance after a credit transaction"""
         self.assertEqual(self.credit.balance, 1500)
+
+    def test_update_balance_debit(self):
+        """it should update and store the new balance after a debit transaction"""
+        self.assertEqual(self.debit.balance, 500)
 
 
 if __name__ == "__main__":
