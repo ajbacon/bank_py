@@ -16,7 +16,7 @@ class TestTransaction(unittest.TestCase):
         self.assertEqual(self.credit.amount, 1000)
 
     def test_type_credit(self):
-        """should have a type property of 'CREDIT' when a cre property to return the amount"""
+        """should have a category property of 'CREDIT' when 'CREDIT' passed in'"""
         self.assertEqual(self.credit.amount, 1000)
         self.assertEqual(self.credit.category, 'CREDIT')
 
