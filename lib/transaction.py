@@ -18,10 +18,5 @@ class Transaction():
 
     # private methods
     def __update_balance(self, amount, old_balance, category):
-
-        if category == 'CREDIT':
-            balance = old_balance + amount
-        else:
-            balance = old_balance - amount
-
+        balance = old_balance + amount if category == 'CREDIT' else old_balance - amount
         return balance
