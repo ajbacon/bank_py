@@ -12,3 +12,6 @@ class TransactionHistory():
         self._history.append(Transaction(
             amount, category, old_balance))
         return self._history[0]
+
+    def get_history(self):
+        return self._history

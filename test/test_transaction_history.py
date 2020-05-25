@@ -22,6 +22,17 @@ class TestTransactionHistory(unittest.TestCase):
         mock_transaction.assert_called_with(1000, 'CREDIT', 500)
         self.assertEqual(transaction, transaction_instance)
 
+    @patch('lib.transaction_history.Transaction')
+    def test_get_history(self, mock_transaction):
+        """it should return a list of all transactions"""
+        self.history.add(1000, 'CREDIT', 500)
+        self.history.add(500, 'DEBIT', 1000)
+
+        mock_transaction.assert_any_call(1000, 'CREDIT', 500)
+        mock_transaction.assert_any_call(500, 'DEBIT', 1000)
+
+        self.assertEqual(len(self.history.get_history()), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
